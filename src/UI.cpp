@@ -7,5 +7,10 @@ namespace UI{
         std::cout << "[1] Sumar     [2] Restar      [3] Multiplicar"<<'\n';
         std::cout << "Elige una opcion: ";
     }
+
+
+    void showCacheIsAlreadyEmpty(){
+        std::cout << "La cache ya esta vacia.";
+    }
 }
 
