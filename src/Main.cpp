@@ -2,10 +2,10 @@
 
 
 #include <iostream>
-
+#include "Cache.h"
 #include "Calculator.h"
-#include "Operations.h"
 #include "UI.h"
+
 /*
 * PRIMERA MODIFICACION: HACERLO GENERICO DENTRO DE TIPOS NUMERICOS, NO SOLO INT Y EN CUANTO SE PUEDA 
 */
@@ -23,8 +23,8 @@ void ejecutar(){
     std::cin>>op1;
     std::cout<<'\n'<<"op2: ";
     std::cin>>op2;
-    //int res{realizarOperacion(static_cast<Operacion>(eleccion), op1, op2)};
-    //std::cout<<res;
+    auto res{Calculator::realizarOperacion(static_cast<Calculator::Operacion>(eleccion), op1, op2)};
+    std::cout<<res;
 }
 
 int main(){
