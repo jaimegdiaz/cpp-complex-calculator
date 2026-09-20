@@ -2,9 +2,19 @@
 #include <cstdint>
 #include "Cache.h"
 #include "Operations.h"
+
+
+/**
+ * 
+ * 
+ *          PASAR TODOS LOS CPP CON TEMPLATES A LOS HEADERS PARA PODER HACERLO BIEN.
+ *      
+ * 
+ * 
+ */
 namespace Calculator{
     
-    enum class Operacion : std::int8_t{
+     enum class Operacion : std::int8_t{
         suma = 1,
         resta = 2,
         multiplicacion = 3,

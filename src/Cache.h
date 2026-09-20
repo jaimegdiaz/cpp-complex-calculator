@@ -1,14 +1,16 @@
-#include <variant>
+#pragma once
+#include <unordered_map>
 #include "UI.h"
 
+
+
 namespace Cache{
-    int capacity{};
+    //TODO SOLUCIONAR PARA QUE SEA GENERICO
+    inline int capacity{};
     enum PoliticaExpulsion{
         LRU = 0
         //Ir añadiendo
     };
-
-    //TODO SOLUCIONAR PARA QUE SEA GENERICO
 
     template<typename T, typename U>
     std::unordered_map<std::tuple<int, T, U>, std::common_type_t<T,U>> cache;
@@ -16,11 +18,11 @@ namespace Cache{
     template<typename T, typename U>
     void addElementToCache(int operacion, T op1, U op2, std::common_type_t<T,U> res){
         if(cache<T,U>.size()<capacity){
-            cache<T,U>.at({operacion,op1,op2})=res;
+            cache<T,U>[{operacion,op1,op2}]=res;
         } else{
             //ESTO SE CAMBIARA POR LA POLITICA DE EXPULSION ADECUADA
             //ejectElementFromCache() y luego se añade el nuevo elemento
-            cache<T,U>.at({operacion,op1,op2})=res;
+            cache<T,U>[{operacion,op1,op2}]=res;
         }   
     }
 
@@ -38,7 +40,7 @@ namespace Cache{
         }
     }
 
-    void changeCapacity(int newCapacity){
+    inline void changeCapacity(int newCapacity){
         capacity=newCapacity;
     }
 }
