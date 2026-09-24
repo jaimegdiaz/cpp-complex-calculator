@@ -17,8 +17,8 @@ void ejecutar(){
     int eleccion{};
     std::cin >> eleccion;
     std::cout<<"Escoge los dos operandos: "<<'\n';
-    int op1{};
-    int op2{};
+    double op1{};
+    double op2{};
     std::cout<<"op1: ";
     std::cin>>op1;
     std::cout<<'\n'<<"op2: ";

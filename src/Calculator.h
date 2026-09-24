@@ -14,14 +14,14 @@
  */
 namespace Calculator{
     
-     enum class Operacion : std::int8_t{
+    enum class Operacion : std::int8_t{
         suma = 1,
         resta = 2,
         multiplicacion = 3,
         division = 4
     };
 
-    template <typename T, typename U>
+    template <Operations::Arithmetic T, Operations::Arithmetic U>
     auto realizarOperacion(Operacion eleccion, T op1, U op2){    
         switch(eleccion){
             case Operacion::suma: {

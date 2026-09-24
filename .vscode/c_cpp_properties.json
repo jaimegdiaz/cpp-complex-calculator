@@ -12,7 +12,7 @@
                 "_UNICODE"
             ],
             "cStandard": "gnu23",
-            "cppStandard": "gnu++17",
+            "cppStandard": "gnu++20",
             "intelliSenseMode": "windows-gcc-x64",
             "compilerPath": "C:/msys64/ucrt64/bin/g++.exe"
         }

@@ -13,5 +13,9 @@ namespace UI{
     void showCacheIsAlreadyEmpty(){
         std::cout << "La cache ya esta vacia.";
     }
+
+    void showMathError(){
+        std::cerr << "ERROR: Cálculo no válido.";
+    }
 }
 
