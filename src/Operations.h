@@ -4,6 +4,7 @@
 #include <concepts>
 #include <exception>
 #include "UI.h"
+#include "Estadisticas.h"
 namespace Operations{
 
     template <typename T> 
@@ -21,7 +22,11 @@ namespace Operations{
 
     template<Arithmetic T, Arithmetic U>
     auto Multiplicacion(T op1, U op2){
-        return op1*op2;
+        auto tActual = Estadisticas::getTiempoActual();
+        auto res = op1*op2;
+        auto tFinal = Estadisticas::getTiempoActual();
+
+        UI::showDuracion(Estadisticas::getDuracion(tFinal, tActual));
     }
 
     template<Arithmetic T, Arithmetic U>

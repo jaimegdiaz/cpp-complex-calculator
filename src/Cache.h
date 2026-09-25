@@ -34,9 +34,9 @@ namespace Cache{
         template <typename... Args>
         std::size_t operator()(const std::tuple<Args...>& t) const {
             std::size_t seed = 0;
-            // std::apply itera sobre los elementos de la tupla aplicando hash_combine
+           
             std::apply([&seed](const auto&... args) {
-                (hash_combine(seed, args), ...); // Fold expression de C++17/20
+                (hash_combine(seed, args), ...); 
             }, t);
             return seed;
         }
